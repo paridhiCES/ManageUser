@@ -1,0 +1,18 @@
+{
+  "users": [
+    {
+      "name": "Paridhi Shrivastava",
+      "address": "Bhopal",
+      "contact": "9090909090",
+      "email": "pari.shri1993@gmail.com",
+      "id": 1
+    },
+    {
+      "name": "Gouri",
+      "address": "Pune",
+      "contact": "9090990909",
+      "email": "gouri@gmail.com",
+      "id": 2
+    }
+  ]
+}
