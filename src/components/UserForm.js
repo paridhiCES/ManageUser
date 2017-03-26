@@ -108,4 +108,8 @@ class UserForm extends Component {
   }
 }
 
+UserForm.propTypes = {
+  params: PropTypes.object,
+}
+
 export default UserForm

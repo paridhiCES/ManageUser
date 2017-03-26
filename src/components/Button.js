@@ -7,8 +7,8 @@ const Button = ({style, value, onClick}) => {
 }
 
 Button.propTypes = {
-  style: PropTypes.object,
-  value: PropTypes.string,
+  style: PropTypes.object.isRequired,
+  value: PropTypes.string.isRequired,
   onClick: PropTypes.func,
 }
 

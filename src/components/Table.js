@@ -1,6 +1,5 @@
 import React,{ PropTypes } from 'react'
 import { browserHistory } from 'react-router'
-import _ from 'lodash'
 import '../css/App.css'
 
 
@@ -18,7 +17,7 @@ const Table = ({tableData, style}) => {
                 <th>Contact</th>
                 <th>Email</th>
               </tr>
-              {_.map(tableData, function(row){
+              {tableData && tableData.map(row => {
                   return (
                   <tr onClick={() => editUser(row)} key={row.id}>
                       <td>{row.name}</td>
@@ -37,7 +36,7 @@ const Table = ({tableData, style}) => {
 Table.propTypes = {
   actions: PropTypes.object,
   tableData: PropTypes.array,
-  style: PropTypes.object,
+  style: PropTypes.object.isRequired,
 }
 
 export default Table

@@ -17,11 +17,11 @@ const TextInput = ({label, name, value, onChange, validEmail, placeholder}) => {
 
 TextInput.propTypes = {
   label: React.PropTypes.string,
-  name: React.PropTypes.string,
-  value: React.PropTypes.string,
-  onChange: React.PropTypes.func,
+  name: React.PropTypes.string.isRequired,
+  value: React.PropTypes.string.isRequired,
+  onChange: React.PropTypes.func.isRequired,
   validEmail: React.PropTypes.bool,
-  placeholder: React.PropTypes.string,
+  placeholder: React.PropTypes.string.isRequired,
 }
 
 export default TextInput
