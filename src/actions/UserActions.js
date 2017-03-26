@@ -32,3 +32,20 @@ export function saveUser(user) {
     }).then(response => browserHistory.push('/'))
   }
 }
+
+export function updateUser(user){
+  return dispatch => {
+    fetch(`http://localhost:8080/users/${user.id}`, {
+      method: "put",
+      headers: {
+          'Content-Type': 'application/json'
+          },
+      body: JSON.stringify({
+        name: user.name,
+        address: user.address,
+        contact: user.contact,
+        email: user.email
+      })
+    }).then(response => browserHistory.push('/'))
+  }
+}

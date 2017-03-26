@@ -9,26 +9,30 @@ import TextInput from './TextInput'
 import {formStyle, submitStyle, backBtnStyle} from '../css/Style'
 
 class UserForm extends Component {
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.state = {
-      user:{
-        name:'',
-        address:'',
-        contact:'',
-        email:''
-      },
+      user: props.user,
       isValidEmail: false
     }
     this.emailFormat = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   }
 
+  validateEmail = (email) => {
+    this.setState({
+      isValidEmail: this.emailFormat.test(email)
+    })
+  }
+
+  componentDidMount(){
+    debugger
+    this.validateEmail(this.state.user.email)
+  }
+
   onChange = (event) => {
     const name = event.target.name
     if(name === 'email'){
-      this.setState({
-        validEmail: this.emailFormat.test(event.target.value)
-      })
+      this.validateEmail(event.target.value)
     }
       this.setState({
           user:{
@@ -54,14 +58,16 @@ class UserForm extends Component {
     var isvalid = false
     var isEmpty = false
     isEmpty = userDetails.name === '' || userDetails.address === '' || userDetails.contact === '' || userDetails.email === ''
-    isvalid = isEmpty || !this.state.validEmail
+    isvalid = isEmpty || !this.state.isValidEmail
     return isvalid;
   }
 
   handleSubmit = () => {
-    if(this.formValidations(this.state.user)){
+    if (this.formValidations(this.state.user)){
       alert('Please Fill the Details or check Email TextBox')
-    }else{
+    } else if(this.props.params.id){
+      this.props.actions.updateUser(this.state.user);
+    } else {
       this.props.actions.saveUser(this.state.user);
     }
   }
@@ -89,7 +95,7 @@ class UserForm extends Component {
             onChange={this.onChange} />
           <TextInput label='Email' name='email'
             placeholder='Enter Email'
-            validEmail={this.state.validEmail}
+            validEmail={this.state.isValidEmail}
             value={this.state.user.email}
             onChange={this.onChange} />
           <div>

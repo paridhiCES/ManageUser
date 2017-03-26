@@ -11,13 +11,12 @@ import { buttonStyle, rootDiv, tableStyle, tableContainer } from '../css/Style'
 import '../css/App.css';
 
 class UserList extends Component {
-  
+
   onClick = () => {
     browserHistory.push('/form')
   }
 
   componentDidMount(){
-    console.log('componentDidMount');
     this.props.actions.fetchUsers()
   }
 

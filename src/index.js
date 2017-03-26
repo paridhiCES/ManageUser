@@ -18,6 +18,7 @@ ReactDOM.render(
     <Router history={browserHistory}>
         <Route path='/' component={UserList}></Route>
         <Route path='/form' component={UserForm}></Route>
+        <Route path='/form/:id' component={UserForm}></Route>
     </Router>
   </Provider>,
   document.getElementById('root')

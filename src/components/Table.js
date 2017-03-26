@@ -1,8 +1,13 @@
 import React,{ PropTypes } from 'react'
+import { browserHistory } from 'react-router'
 import _ from 'lodash'
 import '../css/App.css'
 
+
 const Table = ({tableData, style}) => {
+  var editUser = (user) => {
+    browserHistory.push(`/form/${user.id}`)
+  }
   return(
         <div>
           <table style={style}>
@@ -15,7 +20,7 @@ const Table = ({tableData, style}) => {
               </tr>
               {_.map(tableData, function(row){
                   return (
-                  <tr key={row.id}>
+                  <tr onClick={() => editUser(row)} key={row.id}>
                       <td>{row.name}</td>
                       <td>{row.address}</td>
                       <td>{row.contact}</td>
