@@ -2,14 +2,20 @@ import React from 'react'
 import { labelStyle, textBoxStyle } from '../css/Style'
 
 
-const TextInput = ({label, name, value, onChange, validEmail, placeholder}) => {
+const TextInput = ({type, label, name, value, onChange, isValid, placeholder, maxlength}) => {
     return(
       <div>
           <div style={labelStyle}>
             {label}
           </div>
           <div>
-            <input type="text" style={{...textBoxStyle(validEmail)}} placeholder={placeholder} name={name} value={value} onChange={onChange}/>
+            <input type={type}
+            style={{...textBoxStyle(isValid)}}
+            placeholder={placeholder}
+            name={name} value={value}
+            onChange={onChange}
+            maxlength={maxlength}
+            />
           </div>
       </div>
     )

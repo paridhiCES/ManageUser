@@ -7,7 +7,7 @@ import Button from './Button'
 import Table from './Table'
 
 //Styles
-import { buttonStyle, rootDiv, tableStyle, tableContainer } from '../css/Style'
+import { buttonStyle, rootDiv, tableStyle, tableContainer, buttonContainer } from '../css/Style'
 import '../css/App.css';
 
 class UserList extends Component {
@@ -25,7 +25,7 @@ class UserList extends Component {
     const {tableData, actions} = this.props
     return(
       <div style={rootDiv}>
-        <div>
+        <div style={buttonContainer}>
           <Button style={buttonStyle}
             value="Add New User"
             onClick={this.onClick} />

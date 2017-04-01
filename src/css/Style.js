@@ -1,5 +1,5 @@
 export const buttonStyle = {
-  backgroundColor: '#f4511e',
+  backgroundColor: '#4691f6',
   color: '#FFFFFF',
   width: '200px',
   padding: '10px',
@@ -9,11 +9,11 @@ export const buttonStyle = {
   display: 'inline-block',
   fontSize: '18px',
   margin: '10px',
-  transition: 'width 2s'
+  transition: 'width 2s',
 }
 
-export const buttonHover = {
-  width: '300px'
+export const buttonContainer = {
+  textAlign: 'center'
 }
 
 export const rootDiv = {
@@ -48,7 +48,7 @@ export const formStyle = {
 export const submitStyle = (isSubmit) => {
     return {
       width: '46%',
-      backgroundColor: isSubmit ? '#4CAF50' : '#CCC',
+      backgroundColor: isSubmit ? '#4691f6' : '#CCC',
       color:  isSubmit ? 'white' : 'black',
       padding: '14px 20px',
       margin: '8px 0',
@@ -81,6 +81,7 @@ export const iconContainer = {
 
 export const iconStyle = {
   paddingRight: '25px',
+  cursor: 'pointer'
 }
 
 export const textBoxStyle = (validEmail) => {

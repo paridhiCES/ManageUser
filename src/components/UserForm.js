@@ -13,14 +13,22 @@ class UserForm extends Component {
     super(props);
     this.state = {
       user: props.user,
-      isValidEmail: false
+      isValidEmail: false,
+      isValidContact: false,
     }
     this.emailFormat = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    this.contactFormat = /^(\+\d{1,3}[- ]?)?\d{10}$/
   }
 
   validateEmail = (email) => {
     this.setState({
       isValidEmail: this.emailFormat.test(email)
+    })
+  }
+
+  validateContact = (contact) => {
+    this.setState({
+      isValidContact: this.contactFormat.test(contact)
     })
   }
 
@@ -32,7 +40,8 @@ class UserForm extends Component {
     if(this.props.user !== nextProps){
       this.setState({
         user: nextProps.user,
-        isValidEmail: this.emailFormat.test(nextProps.user.email)
+        isValidEmail: this.emailFormat.test(nextProps.user.email),
+        isValidContact: this.contactFormat.test(nextProps.user.contact)
       })
     }
   }
@@ -41,6 +50,8 @@ class UserForm extends Component {
     const name = event.target.name
     if(name === 'email'){
       this.validateEmail(event.target.value)
+    }else if(name === 'contact'){
+      this.validateContact(event.target.value)
     }
       this.setState({
           user:{
@@ -66,7 +77,7 @@ class UserForm extends Component {
     var isvalid = false
     var isEmpty = false
     isEmpty = userDetails.name === '' || userDetails.address === '' || userDetails.contact === '' || userDetails.email === ''
-    isvalid = isEmpty || !this.state.isValidEmail
+    isvalid = isEmpty || !this.state.isValidEmail || !this.state.isValidContact
     return isvalid;
   }
 
@@ -88,29 +99,33 @@ class UserForm extends Component {
     return (
       <div>
         <Button value="Back" style={backBtnStyle} onClick={this.goBack} />
-        <div style={formStyle}>
-          <TextInput label='Name' name='name'
-            placeholder='Enter Full Name'
-            value={this.state.user.name}
-            onChange={this.onChange} />
-          <TextInput label='Address' name='address'
-            placeholder='Enter Address'
-            value={this.state.user.address}
-            onChange={this.onChange} />
-          <TextInput label='Contact' name='contact'
-            placeholder='Enter Contact'
-            value={this.state.user.contact}
-            onChange={this.onChange} />
-          <TextInput label='Email' name='email'
-            placeholder='Enter Email'
-            validEmail={this.state.isValidEmail}
-            value={this.state.user.email}
-            onChange={this.onChange} />
-          <div>
-            <Button value="Clear" style={submitStyle(false)} onClick={this.resetFields} />
-            <Button value="Submit" style={submitStyle(true)} onClick={this.handleSubmit}/>
+        <form>
+          <div style={formStyle}>
+            <TextInput type='text' label='Name' name='name'
+              placeholder='Enter Full Name'
+              value={this.state.user.name}
+              onChange={this.onChange} />
+            <TextInput type='text' label='Address' name='address'
+              placeholder='Enter Address'
+              value={this.state.user.address}
+              onChange={this.onChange} />
+            <TextInput type="tel" maxlength="10" label='Contact' name='contact'
+              placeholder='Enter Contact (eg- XXXXXXXXXX)'
+              value={this.state.user.contact}
+              isValid={this.state.isValidContact}
+              onChange={this.onChange} />
+            <TextInput type="email" label='Email' name='email'
+              placeholder='Enter Email (eg- xxx@mail.com)'
+              isValid={this.state.isValidEmail}
+              value={this.state.user.email}
+              onChange={this.onChange}
+              />
+            <div>
+              <Button value="Clear" style={submitStyle(false)} onClick={this.resetFields} />
+              <Button value="Submit" style={submitStyle(true)} onClick={this.handleSubmit}/>
+            </div>
           </div>
-        </div>
+        </form>
       </div>
     );
   }
