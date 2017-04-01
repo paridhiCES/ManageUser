@@ -12,8 +12,10 @@ const getUserById = (users, id) => {
 const mapStateToProps = (state, ownProps) => {
   const userId = ownProps.params.id;
   let user = {id : '', name : '', address : '', contact : '', email : ''}
+  console.log(state)
+  debugger;
   if (userId){
-    user = getUserById(state.users[0], parseInt(userId))
+    user = state.user
   }
   return {
     user: user

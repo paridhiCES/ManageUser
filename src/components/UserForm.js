@@ -25,8 +25,16 @@ class UserForm extends Component {
   }
 
   componentDidMount(){
-    debugger
-    this.validateEmail(this.state.user.email)
+    this.props.actions.getUserById(this.props.params.id)
+  }
+
+  componentWillReceiveProps(nextProps){
+    if(this.props.user !== nextProps){
+      this.setState({
+        user: nextProps.user,
+        isValidEmail: this.emailFormat.test(nextProps.user.email)
+      })
+    }
   }
 
   onChange = (event) => {

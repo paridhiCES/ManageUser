@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import UserList from './container/UserListContainer';
+import UserList from './container/UserListContainer'
 import UserForm from './container/UserFormContainer'
 import './index.css';
 import { Router, Route, browserHistory} from 'react-router'

@@ -1,1 +1,2 @@
 export const LOAD_USERS_IN_TABLE = 'LOAD_USERS'
+export const FETCH_USER_BY_ID = 'FETCH_USER_BY_ID'

@@ -72,6 +72,17 @@ export const labelStyle = {
   paddingLeft: '20px'
 }
 
+export const iconContainer = {
+  display: 'flex',
+  justifyContent: 'center',
+  flexDirection: 'row',
+  flexWrap: 'wrap'
+}
+
+export const iconStyle = {
+  paddingRight: '25px',
+}
+
 export const textBoxStyle = (validEmail) => {
   return {
     width: '100%',

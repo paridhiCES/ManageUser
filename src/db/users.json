@@ -1,74 +1,11 @@
 {
   "users": [
     {
-      "name": "Gudiya",
-      "address": "koas",
-      "contact": "jkhsdhf",
-      "email": "jkjas@gmail.com",
-      "id": 1
-    },
-    {
-      "name": "Gouri",
-      "address": "Pune",
-      "contact": "9090990909",
-      "email": "gouri@gmail.com",
+      "name": "fhff",
+      "address": "fghg",
+      "contact": "hgf",
+      "email": "hgj@l.com",
       "id": 2
-    },
-    {
-      "name": "pragyA",
-      "address": "JHANSI",
-      "contact": "sdadad",
-      "email": "pragya.agrawal.9465@gmail.com",
-      "id": 3
-    },
-    {
-      "name": "Paridhi Shrivastava",
-      "address": "Bhopal",
-      "contact": "9090909090",
-      "email": "pari.shri1993@gmail.com",
-      "id": 4
-    },
-    {
-      "name": "SUmbul",
-      "address": "Bhopal",
-      "contact": "9090909090",
-      "email": "sumbulafrozali@gmail.com",
-      "id": 5
-    },
-    {
-      "name": "Pragya",
-      "address": "Bhopal",
-      "contact": "9090909090a",
-      "email": "pragya.agrawal.9465@gmail.com",
-      "id": 6
-    },
-    {
-      "name": "gjhgjgj",
-      "address": "aas",
-      "contact": "9090909090",
-      "email": "pari.shri1993@gmail.com",
-      "id": 7
-    },
-    {
-      "name": "Paridhi Shrivastava",
-      "address": "Bhopal",
-      "contact": "9090909090",
-      "email": "pari.shri1993@gmail.com",
-      "id": 8
-    },
-    {
-      "name": "Plkjkljlk",
-      "address": "Bhopal",
-      "contact": "9090909090",
-      "email": "pari.shri1993@gmail.com",
-      "id": 9
-    },
-    {
-      "name": "Paridhi Shrivastava",
-      "address": "Bhopal",
-      "contact": "klko",
-      "email": "pari.shri1993@gmail.com",
-      "id": 10
     }
   ]
 }

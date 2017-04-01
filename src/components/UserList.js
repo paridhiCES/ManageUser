@@ -17,11 +17,12 @@ class UserList extends Component {
   }
 
   componentDidMount(){
+    console.log('componentDidMount')
     this.props.actions.fetchUsers()
   }
 
   render(){
-    const {tableData} = this.props
+    const {tableData, actions} = this.props
     return(
       <div style={rootDiv}>
         <div>
@@ -30,7 +31,7 @@ class UserList extends Component {
             onClick={this.onClick} />
         </div>
         <div style={tableContainer}>
-          <Table style={tableStyle} tableData={tableData} />
+          <Table style={tableStyle} tableData={tableData} actions={actions} />
         </div>
       </div>
     )

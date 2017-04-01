@@ -9,7 +9,7 @@ const TextInput = ({label, name, value, onChange, validEmail, placeholder}) => {
             {label}
           </div>
           <div>
-            <input type="text" style={{...textBoxStyle(validEmail)}} placeholder={placeholder} name={name} value={value} onChange={onChange} />
+            <input type="text" style={{...textBoxStyle(validEmail)}} placeholder={placeholder} name={name} value={value} onChange={onChange}/>
           </div>
       </div>
     )
@@ -18,7 +18,7 @@ const TextInput = ({label, name, value, onChange, validEmail, placeholder}) => {
 TextInput.propTypes = {
   label: React.PropTypes.string,
   name: React.PropTypes.string.isRequired,
-  value: React.PropTypes.string.isRequired,
+  value: React.PropTypes.string,
   onChange: React.PropTypes.func.isRequired,
   validEmail: React.PropTypes.bool,
   placeholder: React.PropTypes.string.isRequired,
